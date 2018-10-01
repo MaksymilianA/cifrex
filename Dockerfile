@@ -1,6 +1,6 @@
-FROM alpine:3.6
+FROM alpine:3.8
 MAINTAINER cifrexBandit "admin@cert.cx"
-LABEL version 4.3
+LABEL version 5.0
 
 RUN apk --update add \
     lighttpd \

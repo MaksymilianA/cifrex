@@ -1,7 +1,7 @@
 <?php
 //  
 //    cIFrex Tool for Static Code Analysis
-//    Copyright (C) 2017 cIFrex Team
+//    Copyright (C) 2018 cIFrex Team
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>cIFrex 4.3 - Static Code Analysis Tool</title>
+        <title>cIFrex 5.0 - Static Code Analysis Tool</title>
 
         <script src="./js/jquery.js" type='text/javascript'></script>
         <script src="./js/angular.js" type='text/javascript'></script>
