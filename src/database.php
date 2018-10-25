@@ -1,7 +1,7 @@
 <?php
 //  
 //    cIFrex Tool for Static Code Analysis
-//    Copyright (C) 2015 cIFrex Team
+//    Copyright (C) 2018 cIFrex Team
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -51,8 +51,8 @@ echo startHtmlUpToNavBar("database");
         <td> <A href="http://cxsecurity.com/cveshow/{{filter.cve}}" alt="{{filter.cve}}"><b>{{filter.cve}}</b></A> </td>
         <td> <A href="http://cxsecurity.com/cwe/{{filter.cwe}}" alt="{{filter.cwe}}"><b>{{filter.cwe}}</b></A> </td>
         <td> {{filter.diff | date }} </td>
-        <td><A href="#" class="btn btn-warning" id="deletefilter" ng-click="deleteFilter('lg')"><span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"></span> <B>Delete</B></A></td>
-        <td><A href="#" class="btn btn-primary" id="editfilter" ng-click="editFilter('lg')"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <B>Edit</B></A></td>
+        <td><A href="#/" class="btn btn-warning" id="deletefilter" ng-click="deleteFilter('lg')"><span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"></span> <B>Delete</B></A></td>
+        <td><A href="#/" class="btn btn-primary" id="editfilter" ng-click="editFilter('lg')"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <B>Edit</B></A></td>
       </tr>
     </table>	
 	<a href="#" class="btn btn-primary" id="savefilter" ng-click="saveFilter('lg')"><B>Add New</B></a><br><br>

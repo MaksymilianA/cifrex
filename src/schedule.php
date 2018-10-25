@@ -1,7 +1,7 @@
 <?php
 //  
 //    cIFrex Tool for Static Code Analysis
-//    Copyright (C) 2017 cIFrex Team
+//    Copyright (C) 2018 cIFrex Team
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -59,9 +59,9 @@ echo startHtmlUpToNavBar("schedule");
         <td> {{item.path}} </td>
         <td> {{item.files}} </td>
         <td> {{item.count}} </td>
-        <td><A href="#" class="btn btn-default" ng-click="showFilter('lg')"><span class="glyphicon glyphicon-console" aria-hidden="true"></span> <B>Log</B></A></td>
-        <td><A href="#" class="btn btn-primary" ng-click="resultShow('lg')"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> <B>Result</B></A></td>
-        <td><A href="#" class="btn btn-warning" ng-click="resultDelete()"><span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"></span> <B>Delete</B></A></td>
+        <td><A href="#/" class="btn btn-default" ng-click="showFilter('lg')"><span class="glyphicon glyphicon-console" aria-hidden="true"></span> <B>Log</B></A></td>
+        <td><A href="#/" class="btn btn-primary" ng-click="resultShow('lg')"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> <B>Result</B></A></td>
+        <td><A href="#/" class="btn btn-warning" ng-click="resultDelete()"><span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"></span> <B>Delete</B></A></td>
 
       </tr>
     </table>		

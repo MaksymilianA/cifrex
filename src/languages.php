@@ -1,7 +1,7 @@
 <?php
 //  
 //    cIFrex Tool for Static Code Analysis
-//    Copyright (C) 2017 cIFrex Team
+//    Copyright (C) 2018 cIFrex Team
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -38,9 +38,9 @@ echo startHtmlUpToNavBar("languages");
       
       <tr>
         <th align='center'><a href="#" ng-click="predicate = 'lang_id'; reverse = !reverse">ID</a></th>
-        <th><a href="#" ng-click="predicate = 'name'; reverse = !reverse">Name</a></th>
-        <th><a href="#" ng-click="predicate = 'description'; reverse = !reverse">Description</a></th>
-        <th><a href="#" ng-click="predicate = 'files'; reverse = !reverse">Files</a></th>
+        <th><a href="#/" ng-click="predicate = 'name'; reverse = !reverse">Name</a></th>
+        <th><a href="#/" ng-click="predicate = 'description'; reverse = !reverse">Description</a></th>
+        <th><a href="#/" ng-click="predicate = 'files'; reverse = !reverse">Files</a></th>
         <th>Filters</th>
         <th>Remove</th>
 		<th>Edit</th>
