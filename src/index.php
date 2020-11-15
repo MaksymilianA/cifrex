@@ -1,7 +1,7 @@
 <?php
-//  
+//
 //    cIFrex Tool for Static Code Analysis
-//    Copyright (C) 2017 cIFrex Team
+//    Copyright (C) 2020 cIFrex Team
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -25,31 +25,29 @@ $handleIt = (isset($_GET['action'])) ? $_GET['action'] : 'index';
 
 // create link to database
 $dbLink = new dbEngine($cconfig['db_config']);
-
-// HTML START up to navBar
 echo startHtmlUpToNavBar("quick_scan");
 
 if(isset($_COOKIE['langId']) AND is_numeric($_COOKIE['langId'])){
-    $langIds = intval($_COOKIE['langId']); 
+    $langIds = intval($_COOKIE['langId']);
 } else {
     $langIds = intval($default['defaultLandId']);
 }
 
 if(isset($_COOKIE['toDB'])){
-    $coo_toDb = $_COOKIE['toDB'] ? True : False; 
+    $coo_toDb = $_COOKIE['toDB'] ? True : False;
 } else {
     $coo_toDb = False;
 }
 
 if(isset($_COOKIE['execLog'])){
-    $coo_exeL = $_COOKIE['execLog'] ? True : False; 
+    $coo_exeL = $_COOKIE['execLog'] ? True : False;
 } else {
     $coo_exeL = $default['debugLogCreate'];
 }
 
 $dbLink->sql("SELECT * FROM `cifrex_languages` WHERE lang_id= '".$langIds."'");
 $cookie_lang_nbrOfRes=$dbLink->numOfRows();
-    
+
 if($cookie_lang_nbrOfRes==1){
         $langdetail=$dbLink->getResults();
         $langdetail=$langdetail[0];
@@ -65,7 +63,7 @@ if($cookie_lang_nbrOfRes==1){
 
 <span class="input-group-btn">
 
-<div dropdown is-open="status.isopen">            
+<div dropdown is-open="status.isopen">
 <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">Only Files: {{selected_lang.files}}<span class="caret"></button>
 <ul class="dropdown-menu" role="menu" id='filesToScan'>
 <li ng-repeat="lang_item in languages | orderBy:predicate:reverse" ng-controller="selectFiles"><a href="" ng-click="setValue()"><B>{{ lang_item.name }}</B> ( {{lang_item.files}} )</a></li>
@@ -100,7 +98,7 @@ if($cookie_lang_nbrOfRes==1){
 
                 unset($stack1);
 				unset($stack2);
-                      
+
 ?>
     </select><button id="show_selected" class="btn btn-default" name="trythispatterns" data-loading-text="Loading..." type="button"><FONT COLOR=white><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span> <B>Show selected</B></font> </button>
             <a href="#" class="btn btn-default" id="savefilter"  ng-click="saveFilter('lg')"><span class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span> <B>Save Filter</B></a> <a href="./database.php" class="btn btn-default" id="gotoFilters"><span class="glyphicon glyphicon-random" aria-hidden="true"></span> <B>Filters</B></a> <a href="./destroycookie.php" class="btn btn-default"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> <B>Clean</B></a>
@@ -109,21 +107,21 @@ if($cookie_lang_nbrOfRes==1){
 <!-- TABLE -->
     <div id="tabeladiv">
           <div class="table-responsive-own">
-              
+
         <center>
             <div id="patterns">
 
                     <INPUT type="hidden" name="filtrName" id='filtrName' ng-model="items.filtrName" ng-change="changeFiltrName()">
                     <INPUT type="hidden" name="filtrId" id='filtrId' ng-model="items.filtrId">
                     <INPUT type="hidden" name="filtrDescription" id='filtrDescription' ng-model="items.filtrDescription" ng-change="changeFiltrDescription()">
-        
+
         <TABLE>
             <tbody>
                 <tr>
                     <td width="1%"></td>
                     <td width="98%"><BR>
-                    
-              
+
+
           <TABLE class="table table-striped table-bordered">
                 <thead>
                     <tr>
@@ -148,7 +146,7 @@ if($cookie_lang_nbrOfRes==1){
                     <td>3<BR><INPUT type="text" name="value3" class="form-control input-sm" size="100" id='v3' ng-model="vValues.v3" value="" ng-change="changePatternV3()" ng-Init="vValues.v3 ='<?php  echo (isset($_COOKIE['value3'])) ? addslashes(htmlspecialchars($_COOKIE['value3'])) : '' ?>';changePatternV3();"></td>
                     <td>3<BR><INPUT type="text" name="true3" class="form-control input-sm" size="100" id='t3' ng-model="tValues.t3" value="" ng-change="changePatternT3()" ng-Init="tValues.t3 ='<?php  echo (isset($_COOKIE['true3'])) ? addslashes(htmlspecialchars($_COOKIE['true3'])) : '' ?>';changePatternT3();"></td>
                     <td>3<BR><INPUT type="text" name="false3" class="form-control input-sm" size="100" id='f3' ng-model="fValues.f3" value="" ng-change="changePatternF3()" ng-Init="fValues.f3 ='<?php  echo (isset($_COOKIE['false3'])) ? addslashes(htmlspecialchars($_COOKIE['false3'])) : '' ?>';changePatternF3();"></td>
-                </tr>    
+                </tr>
             </tbody>
         </TABLE></td>
                     <td width="1%"></td>
@@ -156,7 +154,7 @@ if($cookie_lang_nbrOfRes==1){
                         </tbody>
                         </TABLE>
                         </DIV>
-                      
+
                 <accordion>
                 <accordion-group is-open="status.isOther">
                     <accordion-heading>
@@ -187,7 +185,7 @@ if($cookie_lang_nbrOfRes==1){
             <textarea class="form-control" rows="6">{{ textCmd }}</textarea>
             </center>
             </div>
-                  
+
 	    	</div>
 
         </div>

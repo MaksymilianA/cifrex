@@ -1,6 +1,6 @@
-FROM alpine:3.8
+FROM alpine:3.12
 MAINTAINER cifrexBandit "admin@cert.cx"
-LABEL version 5.0
+LABEL version 6.0
 
 RUN apk --update add \
     lighttpd \
@@ -39,7 +39,7 @@ ADD /code/ /code/
 
 RUN sh /etc/lighttpd/createcredentails.sh
 
-RUN mkdir -p /var/www/web/ && \ 
+RUN mkdir -p /var/www/web/ && \
     echo "<?php phpinfo();" > /var/www/web/info.php && \
     adduser www-data -G www-data -H -s /bin/false -D && \
     mkdir -p /run/lighttpd/ && \
@@ -47,7 +47,6 @@ RUN mkdir -p /var/www/web/ && \
 
 EXPOSE 80
 EXPOSE 443
-
 
 RUN chown -R www-data. /var/www/web/
 RUN chown -R www-data. /var/log/lighttpd/
