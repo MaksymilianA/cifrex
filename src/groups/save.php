@@ -1,7 +1,7 @@
 <?php
 //  
 //    cIFrex Tool for Static Code Analysis
-//    Copyright (C) 2015 cIFrex Team
+//    Copyright (C) 2020 cIFrex Team
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -31,6 +31,6 @@ if(!isset($_POST['source'])){ $_POST['source']=''; }
 
 $dateux=date("U");
 
-$dbLink->insertSql("INSERT INTO `cifrex_groups` (`group_id`, `name`, `description`, `path`,  `custom_files`, `source`, `date_created`, `date_lastmod`) VALUES ('', '".addslashes($_POST['name'])."', '".addslashes($_POST['description'])."', '".addslashes($_POST['path'])."', '".addslashes($_POST['custom_files'])."', '".addslashes($_POST['source'])."', '".intval($dateux)."', '".intval($dateux)."');");
+$dbLink->insertSql("INSERT INTO `cifrex_groups` (`group_id`, `name`, `description`, `path`,  `custom_files`, `source`, `date_created`, `date_lastmod`) VALUES (NULL, '".addslashes($_POST['name'])."', '".addslashes($_POST['description'])."', '".addslashes($_POST['path'])."', '".addslashes($_POST['custom_files'])."', '".addslashes($_POST['source'])."', '".intval($dateux)."', '".intval($dateux)."');");
 die("{}");
 ?>
